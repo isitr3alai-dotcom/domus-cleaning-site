@@ -20,16 +20,17 @@
     --teal-dark: #0f5c50;
     --green: #2d7d3a;
     --green-light: #4caf61;
-    --white: #ffffff;
-    --off-white: #f4faf9;
-    --dark: #0d1f1c;
-    --dark2: #132e28;
-    --mid: #1e4a42;
-    --text-muted: #a0c4bc;
-    --accent: #7fffd4;
-    --gold: #d4af37;
-    --glass: rgba(255,255,255,0.07);
-    --glass-border: rgba(255,255,255,0.15);
+    --white: #ffffff;          /* literal white — text on teal, footer, image overlays */
+    --ink: #262420;            /* primary text on the warm-greige canvas */
+    --off-white: #FCFBF8;
+    --dark: #EFECE6;           /* WARM GREIGE canvas (was dark bg) */
+    --dark2: #F8F6F2;          /* bone surface (was dark2) */
+    --mid: #ECE6DC;            /* deeper bone (was mid) */
+    --text-muted: #7d766a;     /* warm gray, readable on light */
+    --accent: #1a8a7a;
+    --gold: #bf9530;           /* deeper gold for contrast on light */
+    --glass: rgba(38,36,32,0.05);        /* dark-on-light glass */
+    --glass-border: rgba(38,36,32,0.13);
   }
 
   html { scroll-behavior: smooth; }
@@ -37,7 +38,7 @@
   body {
     font-family: 'Inter', sans-serif;
     background: var(--dark);
-    color: var(--white);
+    color: var(--ink);
     overflow-x: hidden;
     cursor: none;
   }
@@ -2765,5 +2766,54 @@
   console.log('%cDomus Cleaning 🧹', 'color:#2ab5a0;font-size:20px;font-weight:bold;');
   console.log('%cWe don\'t cut corners — we clean them.', 'color:#d4af37;font-style:italic;font-size:14px;');
 </script>
+
+<!-- ============ WARM GREIGE — light-theme overrides (dark→light re-skin) ============ -->
+<style id="greige-overrides">
+  /* Nav → translucent bone, dark text, teal hover */
+  nav{background:rgba(247,245,241,.85)!important;border-bottom:1px solid var(--glass-border)!important}
+  nav.scrolled{box-shadow:0 4px 30px rgba(120,108,90,.14)!important}
+  .nav-logo-text{color:var(--ink)!important}
+  .nav-logo-text span{color:var(--teal)!important}
+  .nav-links a{color:#4a463f!important}
+  .nav-links a:hover{color:var(--teal)!important;background:rgba(26,138,122,.10)!important}
+  .hamburger span{background:var(--ink)!important}
+  .mobile-menu{background:rgba(248,246,242,.97)!important}
+  .mobile-menu a{color:var(--ink)!important}
+
+  /* Text that was white-on-dark → dark-on-light */
+  .section-title,.hero-title .line1,.hero-title .line3,.service-title,.payment-pill,
+  .tab-btn,.cv-title,.add-review-title,.review-name{color:var(--ink)!important}
+  .section-title span,.hero-title .line2,.cv-title span{color:var(--teal)!important}
+  .review-text{color:#3b382f!important}
+  .form-group label{color:var(--ink)!important}
+
+  /* Outlined button */
+  .btn-secondary{color:var(--teal)!important;border-color:var(--teal)!important;background:transparent!important}
+
+  /* Glass surfaces built for dark → bone cards / white inputs on light */
+  .booking-card{background:var(--dark2)!important;border:1px solid var(--glass-border)!important;box-shadow:0 24px 60px rgba(120,108,90,.16)!important}
+  .form-group input,.form-group textarea,.form-group select{background:#fff!important;border:1px solid var(--glass-border)!important;color:var(--ink)!important}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:#a99f90!important}
+  .form-group select option{background:#fff!important;color:var(--ink)!important}
+  #gr-read{color:var(--ink)!important;border-color:var(--glass-border)!important}
+
+  /* Footer stays deep teal with light text */
+  footer{background:var(--teal-dark)!important;border-top:none!important;color:#cfe6e0!important}
+  footer a,footer p,footer li,footer span{color:#cfe6e0!important}
+  .footer-logo{color:#fff!important}
+  .footer-logo span{color:#8fd3c6!important}
+
+  /* Great Sweep: dark cinematic intro CLEARS INTO the warm-greige site */
+  .gs-clean{background:
+    radial-gradient(1000px 620px at 72% 12%,rgba(26,138,122,.10),transparent 60%),
+    radial-gradient(820px 520px at 8% 105%,rgba(201,154,46,.10),transparent 55%),#EFECE6!important}
+  .gs-clean h1{color:var(--ink)!important}
+  .gs-clean h1 span{color:var(--teal)!important}
+  .gs-clean p,.gs-trust{color:#6a6055!important}
+  .gs-trust b{color:var(--ink)!important}
+  .gs-badge{color:var(--teal)!important}
+  .gs-btn.gold{background:var(--teal)!important;color:#fff!important}
+  .gs-btn.ghost{border-color:var(--glass-border)!important;color:var(--ink)!important}
+</style>
 </body>
 </html>
