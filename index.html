@@ -1263,6 +1263,81 @@
     color: white;
   }
 
+
+  /* SUNBED MAINTENANCE */
+  #sunbed { background: transparent; }
+  .sunbed-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3.5rem;
+    align-items: center;
+    margin-top: 2.5rem;
+  }
+  .sunbed-grid > * { min-width: 0; }
+  .sunbed-figure {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 30px 70px rgba(120,108,90,0.20);
+    background: var(--dark2);
+  }
+  .sunbed-figure img { width: 100%; display: block; }
+  .sunbed-figure figcaption {
+    padding: 0.85rem 1.1rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--glass-border);
+    background: var(--dark2);
+  }
+  .sunbed-badge {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    background: rgba(26,138,122,0.92);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(26,138,122,0.35);
+  }
+  .sunbed-list { list-style: none; margin: 1.75rem 0 0; display: grid; gap: 0.9rem; }
+  .sunbed-list li {
+    display: flex;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    border-radius: 16px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .sunbed-list li:hover {
+    border-color: rgba(26,138,122,0.4);
+    box-shadow: 0 10px 30px rgba(26,138,122,0.14);
+    transform: translateX(4px);
+  }
+  .sunbed-list .tick {
+    flex: 0 0 26px;
+    height: 26px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--teal), var(--green));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(26,138,122,0.35);
+  }
+  .sunbed-list b { display: block; font-size: 0.92rem; margin-bottom: 0.2rem; color: var(--ink); }
+  .sunbed-list span.txt { font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; }
+  .sunbed-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem; }
+  @media (max-width: 900px) {
+    .sunbed-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; }
@@ -1371,6 +1446,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#sunbed">Sunbeds</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#why">About</a></li>
     <li><a href="#reviews">Reviews</a></li>
@@ -1385,6 +1461,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#services" onclick="closeMobile()">🧹 Services</a>
+  <a href="#sunbed" onclick="closeMobile()">☀️ Sunbed Maintenance</a>
   <a href="#gallery" onclick="closeMobile()">🖼️ Gallery</a>
   <a href="#why" onclick="closeMobile()">✨ About Us</a>
   <a href="#reviews" onclick="closeMobile()">⭐ Reviews</a>
@@ -1636,7 +1713,7 @@
     <span class="counter-label">+ Happy Clients</span>
   </div>
   <div class="counter-card reveal">
-    <span class="counter-num counter-anim" data-target="5">0</span>
+    <span class="counter-num counter-anim" data-target="6">0</span>
     <span class="counter-label">Services Offered</span>
   </div>
   <div class="counter-card reveal">
@@ -1681,6 +1758,60 @@
         <h3 class="service-title">Carpet Clean</h3>
         <p class="service-desc">Professional carpet cleaning to lift deep-set dirt, stains, and odours. We restore carpets to their best, using powerful equipment for outstanding results.</p>
         <span class="service-tag">Specialist Equipment</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">☀️</div>
+        <h3 class="service-title">Sunbed Maintenance</h3>
+        <p class="service-desc">Full sunbed servicing and deep clean — internal clean-down of the canopy and bench, every filter cleaned or replaced, acrylics and reflectors, plus underneath the base. megaSun and all other makes, salon or home.</p>
+        <span class="service-tag">Internals, Filters &amp; Underneath</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUNBED MAINTENANCE -->
+<section id="sunbed">
+  <div class="container">
+    <p class="section-label">Specialist Service</p>
+    <h2 class="section-title">Sunbed <span>Maintenance</span> &amp; Internal Clean</h2>
+    <p class="section-sub">Salon and home sunbeds serviced properly — megaSun and every other make. We open it up, clean it inside as well as out, do all the filters, and get underneath the base where the dust, hair and lotion residue collect.</p>
+    <div class="sunbed-grid">
+      <figure class="sunbed-figure reveal">
+        <span class="sunbed-badge">Canopy up · Filters out</span>
+        <img src="domus-sunbed-megasun.svg" alt="megaSun-style lie-down sunbed with the canopy raised, showing the acrylic bed, canopy lamps, front filter grille and the base underneath" loading="lazy" width="1200" height="480">
+        <figcaption>Illustration of a megaSun-style lie-down bed — we service all makes and models, lie-down and stand-up.</figcaption>
+      </figure>
+      <div>
+        <ul class="sunbed-list">
+          <li>
+            <span class="tick">✓</span>
+            <span class="txt"><b>Internal deep clean</b>Canopy and bench opened up so we clean the inside, not just the surfaces you can see — inner shell, reflectors and lamp bays degreased and de-dusted.</span>
+          </li>
+          <li>
+            <span class="tick">✓</span>
+            <span class="txt"><b>All filters — no exceptions</b>Intake, fan and canopy filters removed, washed or replaced where they’re past it, then refitted properly so airflow and cooling are back to where they should be.</span>
+          </li>
+          <li>
+            <span class="tick">✓</span>
+            <span class="txt"><b>Underneath the base</b>We get under the bed and clean the base, the vents beneath it and the floor it stands on — the spot that gets skipped and where dust, hair and lotion build up.</span>
+          </li>
+          <li>
+            <span class="tick">✓</span>
+            <span class="txt"><b>Acrylics &amp; lamps</b>Acrylic sheets cleaned both sides with sunbed-safe products — never solvents that craze acrylic — and tubes wiped down and checked as we go.</span>
+          </li>
+          <li>
+            <span class="tick">✓</span>
+            <span class="txt"><b>Sanitised for the next client</b>Body-contact surfaces, headrest, handles and control panel sanitised and left ready to use.</span>
+          </li>
+          <li>
+            <span class="tick">✓</span>
+            <span class="txt"><b>Salon or home, one bed or a shop floor</b>Scheduled around your opening hours, fully insured, quoted per job — with a regular service schedule if you want one.</span>
+          </li>
+        </ul>
+        <div class="sunbed-actions">
+          <a href="#booking" class="btn-primary">📅 Book a Sunbed Service</a>
+          <a href="https://wa.me/447931265549" target="_blank" class="btn-secondary" rel="noopener">💬 Ask About Your Bed</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1854,6 +1985,7 @@
                 <option>Commercial Clean</option>
                 <option>End of Tenancy</option>
                 <option>Carpet Clean</option>
+                <option>Sunbed Maintenance</option>
                 <option>Bespoke Package</option>
               </select>
               <span class="form-error" id="err-service">Please select a service.</span>
@@ -1984,6 +2116,7 @@
             <option>Commercial Clean</option>
             <option>End of Tenancy</option>
             <option>Carpet Clean</option>
+            <option>Sunbed Maintenance</option>
           </select>
         </div>
       </div>
@@ -2080,6 +2213,7 @@
   </div>
   <div class="footer-links">
     <a href="#services">Services</a>
+    <a href="#sunbed">Sunbeds</a>
     <a href="#gallery">Gallery</a>
     <a href="#why">About</a>
     <a href="#reviews">Reviews</a>
