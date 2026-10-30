@@ -271,6 +271,14 @@
     font-weight: 600 !important;
     box-shadow: 0 0 20px rgba(26,138,122,0.4);
   }
+  .nav-links a.nav-login {
+    border: 1.5px solid var(--teal) !important;
+    color: var(--teal) !important;
+    padding: 0.45rem 1.1rem !important;
+    border-radius: 999px;
+    font-weight: 600 !important;
+  }
+  .nav-links a.nav-login:hover { background: var(--teal) !important; color: var(--white) !important; }
   .nav-cta:hover {
     background: var(--teal-light) !important;
     box-shadow: 0 0 30px rgba(42,181,160,0.6) !important;
@@ -1451,6 +1459,7 @@
     <li><a href="#why">About</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://portal.domusclean.uk" class="nav-login">Client Login</a></li>
     <li><a href="#booking" class="nav-cta">Book Now</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu" role="button" tabindex="0">
@@ -1466,6 +1475,7 @@
   <a href="#why" onclick="closeMobile()">✨ About Us</a>
   <a href="#reviews" onclick="closeMobile()">⭐ Reviews</a>
   <a href="#contact" onclick="closeMobile()">📞 Contact</a>
+  <a href="https://portal.domusclean.uk">🔑 Client Login</a>
   <a href="#booking" onclick="closeMobile()" style="background: var(--teal); color: white; text-align: center; font-weight: 700;">📅 Book Now</a>
 </div>
 
