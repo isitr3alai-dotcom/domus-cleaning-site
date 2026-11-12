@@ -1404,6 +1404,7 @@
   }
   .toast.show { transform: translateY(0); opacity: 1; }
   .toast-icon { font-size: 1.3rem; }
+  section[id], div[id="booking"] { scroll-margin-top: 96px; }
 </style>
 </head>
 <body>
@@ -2096,9 +2097,9 @@
       </div>
       <div class="booking-confirm" id="booking-confirm">
         <div class="confirm-icon">🎉</div>
-        <h3 style="font-family:var(--f-display);font-size:1.8rem;margin-bottom:1rem;">Booking Request Sent!</h3>
-        <p style="color:var(--text-muted);margin-bottom:1.5rem;line-height:1.7;">Thank you! We'll confirm your booking within 24 hours via your preferred contact method. If you need an instant response, WhatsApp us at <strong style="color:var(--teal-light)">+44 7931 265549</strong>.</p>
-        <a href="https://wa.me/447931265549" target="_blank" class="whatsapp-btn" style="display:inline-flex;max-width:280px;margin:0 auto;" rel="noopener">
+        <h3 id="confirm-title" style="font-family:var(--f-display);font-size:1.8rem;margin-bottom:1rem;">Booking Request Sent!</h3>
+        <p id="confirm-text" style="color:var(--text-muted);margin-bottom:1.5rem;line-height:1.7;">Thank you! We'll confirm your booking within 24 hours via your preferred contact method. If you need an instant response, WhatsApp us at <strong style="color:var(--teal-light)">+44 7931 265549</strong>.</p>
+        <a id="confirm-wa" href="https://wa.me/447931265549" target="_blank" class="whatsapp-btn" style="display:inline-flex;max-width:280px;margin:0 auto;" rel="noopener">
           💬 Chat on WhatsApp
         </a>
         <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--text-muted);">Or email us: <a href="mailto:domusmagnificae@gmail.com" style="color:var(--teal-light)">domusmagnificae@gmail.com</a></p>
@@ -2697,19 +2698,38 @@
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    setTimeout(() => {
+    const time = document.getElementById('f-time').value;
+    const products = document.getElementById('f-products').value;
+    const notes = document.getElementById('f-notes').value.trim();
+    const msg = encodeURIComponent(
+      `Hi Domus Cleaning! 👋\n\nI'd like to book a clean:\n\n• Name: ${name}\n• Service: ${service}\n• Date: ${date}${time ? ' (' + time + ')' : ''}\n• Address: ${address}\n• Phone: ${phone}\n• Email: ${email}${notes ? '\n• Notes: ' + notes : ''}\n\nPlease confirm when available. Thank you!`
+    );
+    const waUrl = `https://wa.me/447931265549?text=${msg}`;
+
+    const showConfirm = (sent) => {
       document.getElementById('booking-form-wrap').style.display = 'none';
       document.getElementById('booking-confirm').classList.add('show');
-      showToast('🎉', 'Booking request received!');
+      document.getElementById('confirm-wa').href = waUrl;
+      if (sent) {
+        showToast('🎉', 'Booking request received!');
+      } else {
+        // No backend connected: only WhatsApp can deliver it — say so honestly.
+        document.getElementById('confirm-title').textContent = 'One more step';
+        document.getElementById('confirm-text').innerHTML = 'Tap <strong style="color:var(--teal-light)">Send</strong> in WhatsApp to confirm your booking — your details are already filled in.';
+        window.open(waUrl, '_blank');
+      }
+    };
 
-      // Auto-open WhatsApp with details
-      const msg = encodeURIComponent(
-        `Hi Domus Cleaning! 👋\n\nI'd like to book a clean:\n\n• Name: ${name}\n• Service: ${service}\n• Date: ${date}\n• Address: ${address}\n• Phone: ${phone}\n• Email: ${email}\n\nPlease confirm when available. Thank you!`
-      );
-      setTimeout(() => {
-        window.open(`https://wa.me/447931265549?text=${msg}`, '_blank');
-      }, 1500);
-    }, 1200);
+    if (DOMUS_API) {
+      fetch(DOMUS_API, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ type: 'booking', name, phone, email, service, date, time, address, products, notes })
+      }).then(() => showConfirm(true)).catch(() => showConfirm(false));
+    } else {
+      showConfirm(false);
+    }
   });
 
   // TOAST
