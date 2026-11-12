@@ -122,13 +122,15 @@ body.v2 .nav{position:sticky;top:0;z-index:30;width:100%;max-width:none;padding:
 .scene.light.gallery{padding-top:120px;padding-bottom:120px}
 .scene.dark.standard{border:0;background:#0b1714}
 .scene.light.quote{padding-top:120px;padding-bottom:120px}
-.scene.light .quote label{color:#4d625a}
-.scene.light .quote input,.scene.light .quote select,.scene.light .quote textarea{color:var(--ink-2);border-bottom-color:rgba(10,21,18,.3);background-color:transparent}
-.scene.light .quote option{background:#fff;color:var(--ink-2)}
-.scene.light .quote input:focus,.scene.light .quote select:focus,.scene.light .quote textarea:focus{border-color:var(--mint-deep)}
-.scene.light .quote button{background:var(--ink-2);color:var(--cream)}
-.scene.light .quote input[type=date]{color-scheme:light}
-.scene.light .quote select{background-image:linear-gradient(45deg,transparent 50%,var(--mint-deep) 50%),linear-gradient(135deg,var(--mint-deep) 50%,transparent 50%)}
+.scene.light.quote label{color:#4d625a}
+.scene.light.quote input,.scene.light.quote select,.scene.light.quote textarea{color:var(--ink-2);border-bottom-color:rgba(10,21,18,.3);background-color:transparent}
+.scene.light.quote option{background:#fff;color:var(--ink-2)}
+.scene.light.quote input:focus,.scene.light.quote select:focus,.scene.light.quote textarea:focus{border-color:var(--mint-deep)}
+.scene.light.quote button{background:var(--ink-2);color:var(--cream)}
+.scene.light.quote input[type=date]{color-scheme:light}
+.scene.light.quote select{background-image:linear-gradient(45deg,transparent 50%,var(--mint-deep) 50%),linear-gradient(135deg,var(--mint-deep) 50%,transparent 50%)}
+.scene.light.quote input::placeholder,.scene.light.quote textarea::placeholder{color:#7d8f88;opacity:1}
+.scene.light.quote input:-webkit-autofill{-webkit-text-fill-color:var(--ink-2);box-shadow:0 0 0 40px var(--cream) inset}
 .scene.light .whatsapp-link{color:var(--mint-deep)}
 .scene.light .form-error{color:#c0392b}
 .scene.light .booking-confirm{background:#fff;border-color:rgba(10,21,18,.12)}
