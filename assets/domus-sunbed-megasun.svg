@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 255 1200 480" width="1200" height="480" role="img" aria-labelledby="sb-title sb-desc">
+  <title id="sb-title">megaSun-style sunbed serviced by Domus Cleaning</title>
+  <desc id="sb-desc">Illustration of a professional lie-down sunbed with the canopy raised, showing the acrylic bed, canopy lamps, front filter grille and the base underneath.</desc>
+  <defs>
+    <linearGradient id="sb-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBFAF7"/>
+      <stop offset="100%" stop-color="#EDE9E1"/>
+    </linearGradient>
+    <radialGradient id="sb-halo" cx="50%" cy="34%" r="58%">
+      <stop offset="0%" stop-color="#2ab5a0" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#2ab5a0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sb-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a515c"/>
+      <stop offset="45%" stop-color="#2e343d"/>
+      <stop offset="100%" stop-color="#1b1f26"/>
+    </linearGradient>
+    <linearGradient id="sb-gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8e98a6" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#8e98a6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sb-top" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#343b45"/>
+      <stop offset="55%" stop-color="#272d36"/>
+      <stop offset="100%" stop-color="#1d222a"/>
+    </linearGradient>
+    <linearGradient id="sb-side" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#232830"/>
+      <stop offset="100%" stop-color="#151920"/>
+    </linearGradient>
+    <linearGradient id="sb-acrylic" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#e6f6ff"/>
+      <stop offset="100%" stop-color="#b9e2f2"/>
+    </linearGradient>
+    <linearGradient id="sb-rays" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e9f8ff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#dff3ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sb-teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2ab5a0"/>
+      <stop offset="100%" stop-color="#1a8a7a"/>
+    </linearGradient>
+    <filter id="sb-glow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="sb-soft" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <clipPath id="sb-canopy-clip">
+      <path d="M250,325 Q665,175 1085,325 L1085,405 Q665,255 250,405 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect x="0" y="255" width="1200" height="480" rx="28" fill="url(#sb-bg)"/>
+  <rect x="0" y="255" width="1200" height="480" rx="28" fill="url(#sb-halo)"/>
+
+  <!-- floor shadow -->
+  <ellipse cx="640" cy="694" rx="470" ry="34" fill="#8c8272" opacity="0.28" filter="url(#sb-soft)"/>
+
+  <!-- light spill between canopy and bed -->
+  <path d="M290,400 Q665,258 1055,400 L1035,530 L300,530 Z" fill="url(#sb-rays)" opacity="0.5" filter="url(#sb-soft)"/>
+
+  <!-- hinge column -->
+  <path d="M1040,392 L1104,378 L1104,506 L1040,506 Z" fill="#1a1e25"/>
+  <path d="M1040,392 L1072,385 L1072,506 L1040,506 Z" fill="#2b313a"/>
+  <circle cx="1060" cy="404" r="13" fill="#3c434e"/>
+  <circle cx="1060" cy="404" r="5" fill="#12161c"/>
+
+  <!-- ===== CANOPY (raised on its hinge) ===== -->
+  <g transform="rotate(-5 1105 400)">
+    <path d="M250,325 Q665,175 1085,325 L1085,405 Q665,255 250,405 Z" fill="url(#sb-shell)"/>
+    <path d="M250,325 Q665,175 1085,325 L1085,349 Q665,199 250,349 Z" fill="url(#sb-gloss)" opacity="0.45"/>
+    <g clip-path="url(#sb-canopy-clip)">
+      <!-- lamp bay -->
+      <path d="M250,352 Q665,202 1085,352 L1085,405 Q665,255 250,405 Z" fill="#0d1015"/>
+      <g fill="none" stroke="#dff2ff" stroke-linecap="round" filter="url(#sb-glow)" opacity="1">
+        <path d="M268,396 Q665,246 1068,396" stroke-width="9"/>
+        <path d="M268,382 Q665,232 1068,382" stroke-width="9"/>
+        <path d="M268,368 Q665,218 1068,368" stroke-width="9"/>
+      </g>
+      <g fill="none" stroke="#ffffff" stroke-linecap="round" opacity="0.95">
+        <path d="M268,396 Q665,246 1068,396" stroke-width="5"/>
+        <path d="M268,382 Q665,232 1068,382" stroke-width="5"/>
+        <path d="M268,368 Q665,218 1068,368" stroke-width="5"/>
+      </g>
+      <!-- acrylic sheet over the lamps -->
+      <path d="M256,404 Q665,254 1080,404" fill="none" stroke="#e8f7ff" stroke-width="11" opacity="0.28"/>
+    </g>
+    <!-- canopy end caps -->
+    <path d="M250,325 L250,405 Q262,412 274,404 L274,331 Q262,322 250,325 Z" fill="#20252d"/>
+    <path d="M1085,325 L1085,405 Q1073,412 1061,404 L1061,331 Q1073,322 1085,325 Z" fill="#20252d"/>
+    <!-- brand wordmark -->
+    <g transform="rotate(-7 640 296)" font-family="Inter, Helvetica, Arial, sans-serif" letter-spacing="1.5">
+      <text x="640" y="302" text-anchor="middle" font-size="42" fill="#e9eff6" opacity="0.92">
+        <tspan font-weight="300">mega</tspan><tspan font-weight="700" fill="#ffd9a0">Sun</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- ===== BASE ===== -->
+  <!-- top face -->
+  <polygon points="180,545 255,495 1105,495 1030,545" fill="url(#sb-top)"/>
+  <!-- right side face -->
+  <polygon points="1030,545 1105,495 1105,608 1030,658" fill="url(#sb-side)"/>
+  <!-- front face -->
+  <path d="M180,545 L1030,545 L1030,646 Q1030,658 1018,658 L192,658 Q180,658 180,646 Z" fill="url(#sb-shell)"/>
+
+  <!-- acrylic bed -->
+  <polygon points="208,538 276,503 1078,503 1010,538" fill="url(#sb-acrylic)"/>
+  <polygon points="208,538 276,503 1078,503 1010,538" fill="#ffffff" opacity="0.35" filter="url(#sb-glow)"/>
+  <g stroke="#8fd0e8" stroke-width="1.6" opacity="0.45">
+    <line x1="219" y1="532" x2="1021" y2="532"/>
+    <line x1="232" y1="525" x2="1034" y2="525"/>
+    <line x1="245" y1="518" x2="1047" y2="518"/>
+    <line x1="258" y1="511" x2="1060" y2="511"/>
+  </g>
+  <!-- headrest / pillow -->
+  <path d="M866,536 L916,510 Q996,506 1000,516 L964,538 Q900,542 866,536 Z" fill="#2b313a"/>
+  <path d="M872,532 L918,514 Q988,511 990,517 L960,534 Q904,537 872,532 Z" fill="#3d444f"/>
+
+  <!-- front filter grille -->
+  <rect x="214" y="572" width="432" height="58" rx="12" fill="#171b21"/>
+  <rect x="214" y="572" width="432" height="58" rx="12" fill="none" stroke="#3c434e" stroke-width="1.5"/>
+  <g fill="#2b323c">
+    <rect x="230" y="584" width="9" height="34" rx="4.5"/><rect x="252" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="274" y="584" width="9" height="34" rx="4.5"/><rect x="296" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="318" y="584" width="9" height="34" rx="4.5"/><rect x="340" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="362" y="584" width="9" height="34" rx="4.5"/><rect x="384" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="406" y="584" width="9" height="34" rx="4.5"/><rect x="428" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="450" y="584" width="9" height="34" rx="4.5"/><rect x="472" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="494" y="584" width="9" height="34" rx="4.5"/><rect x="516" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="538" y="584" width="9" height="34" rx="4.5"/><rect x="560" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="582" y="584" width="9" height="34" rx="4.5"/><rect x="604" y="584" width="9" height="34" rx="4.5"/>
+    <rect x="626" y="584" width="9" height="34" rx="4.5"/>
+  </g>
+
+  <!-- control panel -->
+  <rect x="838" y="566" width="172" height="70" rx="14" fill="#12161c"/>
+  <rect x="838" y="566" width="172" height="70" rx="14" fill="none" stroke="#3c434e" stroke-width="1.5"/>
+  <rect x="852" y="578" width="96" height="30" rx="6" fill="#0b2a2a"/>
+  <g fill="#2ab5a0">
+    <rect x="860" y="586" width="44" height="5" rx="2.5"/>
+    <rect x="860" y="596" width="70" height="5" rx="2.5" opacity="0.6"/>
+  </g>
+  <circle cx="972" cy="592" r="12" fill="url(#sb-teal)"/>
+  <g fill="#4b5361">
+    <circle cx="864" cy="622" r="6"/><circle cx="890" cy="622" r="6"/><circle cx="916" cy="622" r="6"/>
+    <circle cx="942" cy="622" r="6"/><circle cx="968" cy="622" r="6"/><circle cx="994" cy="622" r="6"/>
+  </g>
+
+  <!-- underneath: kick vent + feet + floor gap -->
+  <rect x="196" y="646" width="826" height="18" rx="6" fill="#0f1319"/>
+  <g fill="#333a45">
+    <rect x="222" y="652" width="150" height="4" rx="2"/>
+    <rect x="392" y="652" width="150" height="4" rx="2"/>
+    <rect x="562" y="652" width="150" height="4" rx="2"/>
+    <rect x="732" y="652" width="150" height="4" rx="2"/>
+  </g>
+  <g fill="#1a1e25">
+    <rect x="228" y="662" width="46" height="22" rx="7"/>
+    <rect x="500" y="662" width="46" height="22" rx="7"/>
+    <rect x="930" y="662" width="46" height="22" rx="7"/>
+    <rect x="1052" y="614" width="40" height="20" rx="7"/>
+  </g>
+  <rect x="196" y="662" width="826" height="14" fill="#8c8272" opacity="0.16" filter="url(#sb-glow)"/>
+</svg>
