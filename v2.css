@@ -4,7 +4,7 @@
    dark/mint base + sunbed/gallery/booking additions from the first redesign).
    ===================================================================== */
 :root{
-  --cream:#eef4f0; --cream-2:#e2ece6; --ink-2:#0a1512; --mint-deep:#0f8f62;
+  --cream:#ffffff; --cream-2:#f3f7f5; --ink-2:#0a1512; --mint-deep:#0f8f62;
   --script:'Caveat',cursive;
 }
 html{scroll-padding-top:84px}
@@ -201,3 +201,49 @@ body.v2 .nav{position:sticky;top:0;z-index:30;width:100%;max-width:none;padding:
 .review-thanks{color:var(--green);margin:0}
 .review-thanks a{color:#fff}
 @media(max-width:900px){.review-row{grid-template-columns:1fr}.review-form{grid-template-columns:1fr}.reviews-v2{margin-top:80px}}
+
+/* =====================================================================
+   WHITE THEME (2026-11-13): every scene on a white background.
+   Statement / sunbed / standard+reviews were dark; now light.
+   ===================================================================== */
+.scene.light.statement,.scene.light.sunbed,.scene.light.standard{background:#fff;color:var(--ink-2);border-top:1px solid rgba(10,21,18,.08);border-bottom:0}
+.scene.light.sunbed{padding:120px 0}
+/* statement */
+.scene.light .giant span{-webkit-text-stroke:2px rgba(15,143,98,.14)}
+.scene.light .statement-copy h2{color:var(--ink-2)}
+.scene.light .statement-copy h2 em{color:var(--mint-deep)}
+.scene.light .statement-copy>p{color:#4d625a}
+.scene.light .mini-proof{border-top-color:rgba(10,21,18,.12)}
+.scene.light .mini-proof strong{color:var(--mint-deep)}
+.scene.light .mini-proof span{color:#5f736b}
+.scene.light .ticket{box-shadow:0 30px 70px rgba(10,21,18,.18);border:1px solid rgba(10,21,18,.1)}
+/* sunbed */
+.scene.light .sunbed-figure{background:var(--cream-2);border-color:rgba(10,21,18,.1)}
+.scene.light .sunbed-figure figcaption,.scene.light .sunbed-list .txt{color:#4d625a}
+.scene.light .sunbed-list .txt b{color:var(--ink-2)}
+.scene.light .sunbed-list .tick{color:var(--mint-deep)}
+/* buttons on white */
+.scene.light .primary{background:var(--ink-2);color:#fff}
+.scene.light .ghost{color:var(--ink-2);border-color:rgba(10,21,18,.2)}
+.scene.light .ghost:hover{border-color:var(--mint-deep);color:var(--mint-deep)}
+/* standard + reviews */
+.scene.light.standard blockquote{color:var(--ink-2)}
+.scene.light .proof{border-top-color:rgba(10,21,18,.12)}
+.scene.light .proof strong{color:var(--mint-deep)}
+.scene.light .proof h3{color:var(--ink-2)}
+.scene.light .proof p{color:#4d625a}
+.scene.light .reviews-v2{border-top-color:rgba(10,21,18,.12)}
+.scene.light .reviews-v2 .section-head h2{color:var(--ink-2)}
+.scene.light .rcard{background:var(--cream-2);border-color:rgba(10,21,18,.08)}
+.scene.light .rcard:hover{border-color:var(--mint-deep)}
+.scene.light .rcard .stars{color:#e0a526}
+.scene.light .rcard blockquote{color:#2d3d37}
+.scene.light .rcard figcaption b{color:var(--ink-2)}
+.scene.light .rcard figcaption span{color:#5f736b}
+.scene.light .review-form{border-top-color:rgba(10,21,18,.12)}
+.scene.light .review-form label{color:#4d625a}
+.scene.light .review-form input,.scene.light .review-form select,.scene.light .review-form textarea{color:var(--ink-2);border-bottom-color:rgba(10,21,18,.3)}
+.scene.light .review-form option{background:#fff;color:var(--ink-2)}
+.scene.light .review-form button{background:var(--ink-2);color:#fff}
+@media(max-width:900px){.scene.light.sunbed{padding:90px 0}}
+@media(max-width:600px){.scene.light.sunbed{padding:70px 0}}
