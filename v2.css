@@ -247,3 +247,12 @@ body.v2 .nav{position:sticky;top:0;z-index:30;width:100%;max-width:none;padding:
 .scene.light .review-form button{background:var(--ink-2);color:#fff}
 @media(max-width:900px){.scene.light.sunbed{padding:90px 0}}
 @media(max-width:600px){.scene.light.sunbed{padding:70px 0}}
+/* footer on white */
+body.v2 footer{background:#fff;border-top:1px solid rgba(10,21,18,.12)}
+body.v2 footer .brand{color:var(--ink-2)}
+body.v2 footer .brand>span:last-child span,body.v2 footer .brand sup{color:var(--mint-deep)}
+body.v2 footer .brand-mark,body.v2 footer .brand-mark i{border-color:var(--mint-deep);box-shadow:none}
+body.v2 .footer-inner>p{color:#4d625a}
+body.v2 .footer-inner a{color:#3d524a}
+body.v2 .footer-inner a:hover{color:var(--mint-deep)}
+body.v2 .footnote{border-top-color:rgba(10,21,18,.1);color:#6a7f77}
